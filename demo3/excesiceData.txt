@@ -1,0 +1,62 @@
+hello
+/**********列表和列表项地址***********/
+TestList 0x24000090 
+TestList->pxIndex 0x24000098 
+TestList->xListEnd 0x24000098 
+ListItem1 0x240000a4 
+ListItem2 0x240000b8 
+ListItem3 0x240000cc 
+/****************结束*****************/
+
+/*********添加列表项 ListItem1**********/1I
+TestList->xListEnd->pxNext ListItem1 
+ListItem1->pxNext TestList->pxIndex 
+/**********前后向连接分割线***********/
+TestList->xListEnd->pxPrevious  ListItem1 
+ListItem1->pxPrevious TestList->pxIndex 
+/*****************结束****************/
+
+/*********添加列表项 ListItem2**********/12I
+TestList->xListEnd->pxNext ListItem1 
+ListItem1->pxNext ListItem2 
+ListItem2->pxNext TestList->pxIndex 
+/***********前后向连接分割线**********/
+TestList->xListEnd->pxPrevious  ListItem2 
+ListItem1->pxPrevious TestList->pxIndex 
+ListItem2->pxPrevious ListItem1 
+/****************结束*****************/
+
+/*********添加列表项 ListItem3**********/ 132I
+TestList->xListEnd->pxNext ListItem1 
+ListItem1->pxNext ListItem3 
+ListItem3->pxNext ListItem2 
+ListItem2->pxNext TestList->pxIndex 
+/**********前后向连接分割线***********/
+TestList->xListEnd->pxPrevious ListItem2 
+ListItem1->pxPrevious TestList->pxIndex 
+ListItem3->pxPrevious ListItem1 
+ListItem2->pxPrevious ListItem3 
+/*****************结束****************/
+
+/**********删除列表项 ListItem3*********/12I
+TestList->xListEnd->pxNext ListItem1  
+ListItem1->pxNext ListItem2  
+ListItem2->pxNext TestList->pxIndex 
+/***********前后向连接分割线**********/
+TestList->xListEnd->pxPrevious ListItem2  
+ListItem1->pxPrevious TestList->pxIndex 
+ListItem2->pxPrevious ListItem1  
+/****************结束*****************/
+
+/******在末尾添加列表项 ListItem3*******/123I
+TestList->pxIndex TestList->pxIndex 
+TestList->xListEnd->pxNext ListItem1  
+ListItem2->pxNext ListItem3  
+ListItem1->pxNext ListItem2  
+ListItem3->pxNext TestList->pxIndex 
+/***********前后向连接分割线**********/
+TestList->xListEnd->pxPrevious ListItem3  
+ListItem2->pxPrevious ListItem1  
+ListItem1->pxPrevious TestList->pxIndex 
+ListItem3->pxPrevious ListItem2  
+/****************结束*****************/
