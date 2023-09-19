@@ -29,3 +29,9 @@ portDISABLE_INTERRUPTS() 和 portENABLE_INTERRUPTS() 必须在任务中一次运
 
 设置时间片 频率为20HZ 每个任务有50ms运行时间  
 运行效果 就是每个任务连续打印4到5次
+
+## demo5
+
+使用队列传输数据  
+中断使用队列传输 中断优先级必须小于5  
+中断互传好像有问题
