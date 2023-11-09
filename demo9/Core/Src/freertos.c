@@ -187,17 +187,17 @@ void StartTask03(void const * argument)
   for(;;)
   {
     //低优先级
-		xSemaphoreTake(myMutex01Handle,portMAX_DELAY); //获取互斥信号量
+		xSemaphoreTake(myMutex01Handle,portMAX_DELAY); //获取互斥信号�?
 
 		printf("low task Running!\r\n");
 
-		for(times=0;times<1000;times++) //模拟低优先级任务占用互斥信号量
+		for(times=0;times<1000;times++) //模拟低优先级任务占用互斥信号�?
 		{
 			printf("times = %d\r\n", times);
       //主动让出cpu,发起任务调度
 			taskYIELD(); 
 		}
-		xSemaphoreGive(myMutex01Handle); //释放互斥信号量
+		xSemaphoreGive(myMutex01Handle); //释放互斥信号�?
 		osDelay(1000); //延时 1s
   }
   /* USER CODE END StartTask03 */
@@ -219,9 +219,9 @@ void StartTask01(void const * argument)
     //高优先级
     osDelay(500);
 		printf("high task Pend Sem\r\n");
-		xSemaphoreTake(myMutex01Handle,portMAX_DELAY); //获取互斥信号量
+		xSemaphoreTake(myMutex01Handle,portMAX_DELAY); //获取互斥信号�?
 		printf("high task Running!\r\n");
-		xSemaphoreGive(myMutex01Handle); //释放互斥信号量
+		xSemaphoreGive(myMutex01Handle); //释放互斥信号�?
 		osDelay(500); //延时 500ms
   }
   /* USER CODE END StartTask01 */
